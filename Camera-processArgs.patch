@@ -1,0 +1,368 @@
+Files Camera.orig/Camera.app/Camera and Camera.processArgs/Camera.app/Camera differ
+diff -Nur Camera.orig/Camera.app/Resources/Camera.desktop Camera.processArgs/Camera.app/Resources/Camera.desktop
+--- Camera.orig/Camera.app/Resources/Camera.desktop	1969-12-31 17:00:00.000000000 -0700
++++ Camera.processArgs/Camera.app/Resources/Camera.desktop	2008-11-16 18:28:30.000000000 -0700
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Encoding=UTF-8
++Type=Application
++Version=0.94
++Categories=GNUstep
++Name=Camera
++Comment=Download files from your digital camera.
++Icon=Camera.png
++Exec=openapp Camera.app
++#TryExec=Camera.app
++FilePattern=Camera.app;Camera
+diff -Nur Camera.orig/Camera.app/Resources/Camera.gorm/data.classes Camera.processArgs/Camera.app/Resources/Camera.gorm/data.classes
+--- Camera.orig/Camera.app/Resources/Camera.gorm/data.classes	1969-12-31 17:00:00.000000000 -0700
++++ Camera.processArgs/Camera.app/Resources/Camera.gorm/data.classes	2008-11-16 18:28:30.000000000 -0700
+@@ -0,0 +1,171 @@
++{
++    CameraController = {
++	Actions = (
++	    "detectCamera:",
++	    "initiateDownloadFiles:",
++	    "abortDownloadFiles:",
++	    "initiateOrAbortDownload:",
++	    "setDestination:"
++	);
++	Outlets = (
++	    deleteFilesAfterDownload,
++	    progressInfoMsg,
++	    progressBar,
++	    thumbnailView,
++	    transferButton,
++	    cameraInfo,
++	    window,
++	    cameraIcon,
++	    fileInfo
++	);
++	Super = NSObject;
++    };
++    FirstResponder = {
++	Actions = (
++	    "activateContextHelpMode:",
++	    "alignCenter:",
++	    "alignJustified:",
++	    "alignLeft:",
++	    "alignRight:",
++	    "arrangeInFront:",
++	    "cancel:",
++	    "capitalizeWord:",
++	    "changeColor:",
++	    "changeFont:",
++	    "checkSpelling:",
++	    "close:",
++	    "complete:",
++	    "copy:",
++	    "copyFont:",
++	    "copyRuler:",
++	    "cut:",
++	    "delete:",
++	    "deleteBackward:",
++	    "deleteForward:",
++	    "deleteToBeginningOfLine:",
++	    "deleteToBeginningOfParagraph:",
++	    "deleteToEndOfLine:",
++	    "deleteToEndOfParagraph:",
++	    "deleteToMark:",
++	    "deleteWordBackward:",
++	    "deleteWordForward:",
++	    "deminiaturize:",
++	    "deselectAll:",
++	    "fax:",
++	    "hide:",
++	    "hideOtherApplications:",
++	    "indent:",
++	    "loosenKerning:",
++	    "lowerBaseline:",
++	    "lowercaseWord:",
++	    "makeKeyAndOrderFront:",
++	    "miniaturize:",
++	    "miniaturizeAll:",
++	    "moveBackward:",
++	    "moveBackwardAndModifySelection:",
++	    "moveDown:",
++	    "moveDownAndModifySelection:",
++	    "moveForward:",
++	    "moveForwardAndModifySelection:",
++	    "moveLeft:",
++	    "moveRight:",
++	    "moveToBeginningOfDocument:",
++	    "moveToBeginningOfLine:",
++	    "moveToBeginningOfParagraph:",
++	    "moveToEndOfDocument:",
++	    "moveToEndOfLine:",
++	    "moveToEndOfParagraph:",
++	    "moveUp:",
++	    "moveUpAndModifySelection:",
++	    "moveWordBackward:",
++	    "moveWordBackwardAndModifySelection:",
++	    "moveWordForward:",
++	    "moveWordForwardAndModifySelection:",
++	    "newDocument:",
++	    "ok:",
++	    "openDocument:",
++	    "orderBack:",
++	    "orderFront:",
++	    "orderFrontColorPanel:",
++	    "orderFrontDataLinkPanel:",
++	    "orderFrontFontPanel:",
++	    "orderFrontHelpPanel:",
++	    "orderFrontStandardAboutPanel:",
++	    "orderFrontStandardInfoPanel:",
++	    "orderOut:",
++	    "pageDown:",
++	    "pageUp:",
++	    "paste:",
++	    "pasteAsPlainText:",
++	    "pasteAsRichText:",
++	    "pasteFont:",
++	    "pasteRuler:",
++	    "performClose:",
++	    "performMiniaturize:",
++	    "performZoom:",
++	    "print:",
++	    "raiseBaseline:",
++	    "revertDocumentToSaved:",
++	    "runPageLayout:",
++	    "runToolbarCustomizationPalette:",
++	    "saveAllDocuments:",
++	    "saveDocument:",
++	    "saveDocumentAs:",
++	    "saveDocumentTo:",
++	    "scrollLineDown:",
++	    "scrollLineUp:",
++	    "scrollPageDown:",
++	    "scrollPageUp:",
++	    "scrollViaScroller:",
++	    "selectAll:",
++	    "selectLine:",
++	    "selectNextKeyView:",
++	    "selectParagraph:",
++	    "selectPreviousKeyView:",
++	    "selectText:",
++	    "selectText:",
++	    "selectToMark:",
++	    "selectWord:",
++	    "showContextHelp:",
++	    "showGuessPanel:",
++	    "showHelp:",
++	    "showWindow:",
++	    "stop:",
++	    "subscript:",
++	    "superscript:",
++	    "swapWithMark:",
++	    "takeDoubleValueFrom:",
++	    "takeFloatValueFrom:",
++	    "takeIntValueFrom:",
++	    "takeObjectValueFrom:",
++	    "takeStringValueFrom:",
++	    "terminate:",
++	    "tightenKerning:",
++	    "toggle:",
++	    "toggleContinuousSpellChecking:",
++	    "toggleRuler:",
++	    "toggleToolbarShown:",
++	    "toggleTraditionalCharacterShape:",
++	    "transpose:",
++	    "transposeWords:",
++	    "turnOffKerning:",
++	    "turnOffLigatures:",
++	    "underline:",
++	    "unhide:",
++	    "unhideAllApplications:",
++	    "unscript:",
++	    "uppercaseWord:",
++	    "useAllLigatures:",
++	    "useStandardKerning:",
++	    "useStandardLigatures:",
++	    "yank:",
++	    "zoom:",
++	    "detectCamera:",
++	    "initiateDownloadFiles:",
++	    "abortDownloadFiles:",
++	    "initiateOrAbortDownload:",
++	    "setDestination:"
++	);
++	Super = NSObject;
++    };
++}
+\ No newline at end of file
+Files Camera.orig/Camera.app/Resources/Camera.gorm/objects.gorm and Camera.processArgs/Camera.app/Resources/Camera.gorm/objects.gorm differ
+diff -Nur Camera.orig/Camera.app/Resources/CameraInfo.plist Camera.processArgs/Camera.app/Resources/CameraInfo.plist
+--- Camera.orig/Camera.app/Resources/CameraInfo.plist	1969-12-31 17:00:00.000000000 -0700
++++ Camera.processArgs/Camera.app/Resources/CameraInfo.plist	2008-11-16 18:28:30.000000000 -0700
+@@ -0,0 +1,25 @@
++{
++    ApplicationDescription = "Download files from your digital camera.";
++    ApplicationIcon = "Camera.png";
++    ApplicationName = Camera;
++    ApplicationRelease = 0.8;
++    Authors = ("Stefan Kleine Stegemann<stefan@wms-network.de>");
++    Copyright = "Copyright \U00a9 2003 Stefan Kleine Stegemann";
++    CopyrightDescription = "Released under GPL";
++    FullVersionID = 0.8;
++    URL = "http://http://home.gna.org/gsimageapps/"
++/*
++    NSServices = (
++       {
++          NSPortName = Camera;
++          NSMessage = downloadFilesToPlace;
++          NSSendTypes = (NSFilenamesPboardType);
++          NSMenuItem = 
++          {
++             default = "Camera/Download files to this directory";
++             German = "GNUMail/Dateien in dieses Verzeichnis laden";
++          };
++       }
++    );
++*/
++}
+Files Camera.orig/Camera.app/Resources/Camera.png and Camera.processArgs/Camera.app/Resources/Camera.png differ
+diff -Nur Camera.orig/Camera.app/Resources/Info-gnustep.plist Camera.processArgs/Camera.app/Resources/Info-gnustep.plist
+--- Camera.orig/Camera.app/Resources/Info-gnustep.plist	1969-12-31 17:00:00.000000000 -0700
++++ Camera.processArgs/Camera.app/Resources/Info-gnustep.plist	2008-11-16 18:28:30.000000000 -0700
+@@ -0,0 +1,19 @@
++{
++    ApplicationDescription = "Download files from your digital camera.";
++    ApplicationIcon = Camera.png;
++    ApplicationName = Camera;
++    ApplicationRelease = 0.8;
++    Authors = (
++	"Stefan Kleine Stegemann<stefan@wms-network.de>"
++    );
++    Copyright = "Copyright \U00A9 2003 Stefan Kleine Stegemann";
++    CopyrightDescription = "Released under GPL";
++    FullVersionID = 0.8;
++    GSMainMarkupFile = "";
++    NOTE = "Automatically generated, do not edit!";
++    NSExecutable = Camera;
++    NSIcon = Camera.png;
++    NSMainNibFile = Camera;
++    NSPrincipalClass = NSApplication;
++    URL = "http://http://home.gna.org/gsimageapps/";
++}
+\ No newline at end of file
+Files Camera.orig/Camera.app/Resources/no_thumbnail.jpg and Camera.processArgs/Camera.app/Resources/no_thumbnail.jpg differ
+diff -Nur Camera.orig/Camera.app/stamp.make Camera.processArgs/Camera.app/stamp.make
+--- Camera.orig/Camera.app/stamp.make	1969-12-31 17:00:00.000000000 -0700
++++ Camera.processArgs/Camera.app/stamp.make	2008-11-16 18:28:29.000000000 -0700
+@@ -0,0 +1 @@
++OLD_GNUSTEP_STAMP_ASTRING = _NSApplication-Camera.png-Camera-
+diff -Nur Camera.orig/main.m Camera.processArgs/main.m
+--- Camera.orig/main.m	2004-03-31 14:44:24.000000000 -0700
++++ Camera.processArgs/main.m	2008-11-16 18:28:27.000000000 -0700
+@@ -19,15 +19,17 @@
+ #include "AppDelegate.h"
+ 
+ #include <AppKit/NSApplication.h>
++#include <Foundation/NSProcessInfo.h>
+ 
+ /*
+  * Initialize and go!
+  */
+-int main(int argc, const char *argv[]) 
++int main(int argc, const char *argv[], const char *env[]) 
+ {
+    int          apprc;
+    AppDelegate* delegate;
+ 
++   [NSProcessInfo initializeWithArguments: argv count: argc environment: env];
+    [NSApplication sharedApplication];
+ 
+    delegate = [[AppDelegate alloc] init];
+diff -Nur Camera.orig/obj/AppDelegate.d Camera.processArgs/obj/AppDelegate.d
+--- Camera.orig/obj/AppDelegate.d	1969-12-31 17:00:00.000000000 -0700
++++ Camera.processArgs/obj/AppDelegate.d	2008-11-16 18:28:29.000000000 -0700
+@@ -0,0 +1,3 @@
++obj/AppDelegate.o: AppDelegate.m AppDelegate.h
++
++AppDelegate.h:
+Files Camera.orig/obj/AppDelegate.o and Camera.processArgs/obj/AppDelegate.o differ
+diff -Nur Camera.orig/obj/CameraController.d Camera.processArgs/obj/CameraController.d
+--- Camera.orig/obj/CameraController.d	1969-12-31 17:00:00.000000000 -0700
++++ Camera.processArgs/obj/CameraController.d	2008-11-16 18:28:29.000000000 -0700
+@@ -0,0 +1,8 @@
++obj/CameraController.o: CameraController.m CameraController.h \
++  DigitalCamera.h OpenPanelAddons.h
++
++CameraController.h:
++
++DigitalCamera.h:
++
++OpenPanelAddons.h:
+Files Camera.orig/obj/CameraController.o and Camera.processArgs/obj/CameraController.o differ
+diff -Nur Camera.orig/obj/DigitalCamera.d Camera.processArgs/obj/DigitalCamera.d
+--- Camera.orig/obj/DigitalCamera.d	1969-12-31 17:00:00.000000000 -0700
++++ Camera.processArgs/obj/DigitalCamera.d	2008-11-16 18:28:29.000000000 -0700
+@@ -0,0 +1,51 @@
++obj/DigitalCamera.o: DigitalCamera.m DigitalCamera.h \
++  /usr/include/gphoto2/gphoto2.h \
++  /usr/include/gphoto2/gphoto2/gphoto2-port.h \
++  /usr/include/gphoto2/gphoto2/gphoto2-port-info-list.h \
++  /usr/include/gphoto2/gphoto2/gphoto2-port-portability.h \
++  /usr/include/gphoto2/gphoto2/gphoto2-port-log.h \
++  /usr/include/gphoto2/gphoto2/gphoto2-port-result.h \
++  /usr/include/gphoto2/gphoto2/gphoto2-file.h \
++  /usr/include/gphoto2/gphoto2/gphoto2-library.h \
++  /usr/include/gphoto2/gphoto2/gphoto2-abilities-list.h \
++  /usr/include/gphoto2/gphoto2/gphoto2-context.h \
++  /usr/include/gphoto2/gphoto2/gphoto2-list.h \
++  /usr/include/gphoto2/gphoto2/gphoto2-camera.h \
++  /usr/include/gphoto2/gphoto2/gphoto2-widget.h \
++  /usr/include/gphoto2/gphoto2/gphoto2-filesys.h \
++  /usr/include/gphoto2/gphoto2/gphoto2-result.h \
++  /usr/include/gphoto2/gphoto2/gphoto2-setting.h
++
++DigitalCamera.h:
++
++/usr/include/gphoto2/gphoto2.h:
++
++/usr/include/gphoto2/gphoto2/gphoto2-port.h:
++
++/usr/include/gphoto2/gphoto2/gphoto2-port-info-list.h:
++
++/usr/include/gphoto2/gphoto2/gphoto2-port-portability.h:
++
++/usr/include/gphoto2/gphoto2/gphoto2-port-log.h:
++
++/usr/include/gphoto2/gphoto2/gphoto2-port-result.h:
++
++/usr/include/gphoto2/gphoto2/gphoto2-file.h:
++
++/usr/include/gphoto2/gphoto2/gphoto2-library.h:
++
++/usr/include/gphoto2/gphoto2/gphoto2-abilities-list.h:
++
++/usr/include/gphoto2/gphoto2/gphoto2-context.h:
++
++/usr/include/gphoto2/gphoto2/gphoto2-list.h:
++
++/usr/include/gphoto2/gphoto2/gphoto2-camera.h:
++
++/usr/include/gphoto2/gphoto2/gphoto2-widget.h:
++
++/usr/include/gphoto2/gphoto2/gphoto2-filesys.h:
++
++/usr/include/gphoto2/gphoto2/gphoto2-result.h:
++
++/usr/include/gphoto2/gphoto2/gphoto2-setting.h:
+Files Camera.orig/obj/DigitalCamera.o and Camera.processArgs/obj/DigitalCamera.o differ
+diff -Nur Camera.orig/obj/main.d Camera.processArgs/obj/main.d
+--- Camera.orig/obj/main.d	1969-12-31 17:00:00.000000000 -0700
++++ Camera.processArgs/obj/main.d	2008-11-16 18:28:28.000000000 -0700
+@@ -0,0 +1,3 @@
++obj/main.o: main.m AppDelegate.h
++
++AppDelegate.h:
+Files Camera.orig/obj/main.o and Camera.processArgs/obj/main.o differ
+diff -Nur Camera.orig/obj/OpenPanelAddons.d Camera.processArgs/obj/OpenPanelAddons.d
+--- Camera.orig/obj/OpenPanelAddons.d	1969-12-31 17:00:00.000000000 -0700
++++ Camera.processArgs/obj/OpenPanelAddons.d	2008-11-16 18:28:29.000000000 -0700
+@@ -0,0 +1,3 @@
++obj/OpenPanelAddons.o: OpenPanelAddons.m OpenPanelAddons.h
++
++OpenPanelAddons.h:
+Files Camera.orig/obj/OpenPanelAddons.o and Camera.processArgs/obj/OpenPanelAddons.o differ
